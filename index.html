@@ -2,18 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <form>
-        <input type="text" required id="text" placeholder="name">
-        <button>submit</button>
-    </form>
-    <ul class="todos"></ul>
 
+        <div class="top">
+            <div class="top_left-block">
+                <h1 class="top_block-name">Yangi so'z</h1>
+                <form id="form" class="top_block-form" action="">
+                    <input id="input1" class="top-input1" type="text" required placeholder="Eng Word">
+                    <input id="input2" class="top-input2" type="text" required placeholder="Uzb Word">
+                    <button id="btn1" class="top_block-btn">ADD</button>
+                </form>
+            </div>
+            <div class="top_right-block"></div>
+        </div>
+        <div class="bottom">
+            <div class="bottom_left">
+                <h1 class="bottom_block-name">NEW WORDS</h1>
+                <div class="items">
+                    <div class="item_tema">
+                        <h1 class="item-tema1">Eng</h1>
+                        <h1 class="item-tema1">Uzb</h1>
+                    </div>
+                    <div class="wrapper">
+                        <div class="item1">
+                            <div class="ora1">
+                                <h1 class="name1">1</h1>
+                                <h1 class="name1">Word</h1>
+                            </div>
+                            <div class="logolar">
+                                <h1 class="name1">soz</h1>
+                                <div class="ora">
+                                    <img class="img1" src="./static/logo2.svg" alt="">
+                                    <img class="img1" src="./static/logo1.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-right">
+            </div>
+        </div>
     
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
 </body>
 </html>

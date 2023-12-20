@@ -1,47 +1,67 @@
-const textInp = document.querySelector("#text");
-const todoEl = document.querySelector(".todos");
-const formEl = document.querySelector("form");
+const inputEl1 = document.querySelector("#input1");
+const inputEl2 = document.querySelector("#input2");
+const formEl = document.querySelector("#form");
+const btn = document.querySelector(".btn1")
+const block = document.querySelector(".wrapper");
+const block2 = document.querySelector(".logolar");
 
-let todos = [];
 
+let topla = [];
+let topla2 = [];
 
-formEl.addEventListener("submit", e =>{
+formEl.addEventListener("submit", e=> {
     e.preventDefault();
-    const text = textInp.value;
-    if (editTodo) {
-        editTodo.text = text;
-        editTodo = null;
-        textInp.nextElementSibling.textContent = "add";
-    }else{
-        todos.push({
-            id:Math.ceil(Math.random() * 10000),
-            text : text
-        });
-        textInp.value = ""
-        renderTodos();
-
-    }
-
+    const jami1 = inputEl1.value;
+    const jami2 = inputEl2.value;
+    topla.push(jami1);
+    topla2.push(jami2);
+    chiqaradi();
+    chiqaradi2();
 });
 
-function renderTodos () {
+function chiqaradi() {
     let html = "";
-    todos.forEach(todo => {
-        html += `<li>${todo.text} <button onclick="deleteTodo(${todo.id})">del</button> <button onclick="editTodoClick(${todo.id})">del</button></li>`;
+    topla.forEach(sana => {
+        html += `<div class="item1">
+        <div class="ora1">
+            <h1 class="name1">1</h1>
+            <h1 class="name1">${sana}</h1>
+        </div>
+        <div class="logolar">
+            <div class="ora">
+                <img class="img1" src="./rasimlar/logo2.svg" alt="">
+                <img class="img1" src="./rasimlar/logo1.svg" alt="">
+            </div>
+        </div>
+    </div>`;
+    block.innerHTML = html;
+});
+}
+
+// let = function chiqaradi2() {
+//     topla2.forEach(sana2 => {
+//         let html = "";
+//         html += `<h1 class="name1"></h1>`
+//     })
+//     block2.innerHTML = html;
+// }
+
+function chiqaradi2() {
+    let html = "";
+    topla2.forEach(sana2 => {
+        html += `<div class="item1">
+        <div class="ora1">
+            <h1 class="name1">1</h1>
+            <h1 class="name1"></h1>
+        </div>
+        <div class="logolar">
+            <h1 class="name1">${sana2}</h1>
+            <div class="ora">
+                <img class="img1" src="./static/logo2.svg" alt="">
+                <img class="img1" src="./static/logo1.svg" alt="">
+            </div>
+        </div>
+    </div>`;
     });
-    todoEl.innerHTML = html;
-}
-
-
-function deleteTodo(id){
-    todos = todos.filter(todo => todo.id != id);
-    renderTodos();
-}
-
-
-function  editTodoClick(id) {
-    const todo = todos.find(todo => todo.id === id);
-    editTodo = todo;
-    textInp.value = todo.text;
-    textInp.nextElementSibling.textContent = "edit";
+    block.innerHTML = html;
 }
